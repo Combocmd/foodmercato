@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Foodercato - Contact">
+  <title>Contact - Foodercato</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/images/favicon.ico">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main id="main-content" role="main">
+    <div class="container" style="max-width: 600px; margin: 3rem auto;">
+      <div class="card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 2.5rem;">
+        <header style="text-align: center; margin-bottom: 2rem;">
+          <h1 style="color: #123BDA; font-size: 2rem; margin-bottom: 0.5rem;">Nous contacter</h1>
+          <p style="color: #666;">Une question, une suggestion, un partenariat ?</p>
+        </header>
+
+        <form id="contact-form" novalidate>
+          <div style="margin-bottom: 1.5rem;">
+            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: #333;">Nom</label>
+            <input type="text" id="name" name="name" required autocomplete="name"
+              style="width: 100%; padding: 0.75rem 1rem; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; transition: border-color 0.2s;"
+              placeholder="Votre nom">
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: #333;">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email"
+              style="width: 100%; padding: 0.75rem 1rem; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; transition: border-color 0.2s;"
+              placeholder="vous@email.com">
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label for="subject" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: #333;">Sujet</label>
+            <select id="subject" name="subject" required
+              style="width: 100%; padding: 0.75rem 1rem; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem;">
+              <option value="">Choisir un sujet</option>
+              <option value="question">Question générale</option>
+              <option value="partenariat">Proposition de partenariat</option>
+              <option value="publicite">Publicité / Sponsoring</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: #333;">Message</label>
+            <textarea id="message" name="message" required rows="6"
+              style="width: 100%; padding: 0.75rem 1rem; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; font-family: inherit; resize: vertical;"
+              placeholder="Votre message..."></textarea>
+          </div>
+
+          <div id="contact-status" style="padding: 0.75rem; border-radius: 8px; margin-bottom: 1rem; display: none;"></div>
+
+          <button type="submit"
+            style="width: 100%; background: #123BDA; color: #fff; border: none; padding: 0.875rem; font-size: 1rem; font-weight: 600; border-radius: 8px; cursor: pointer; transition: background 0.2s;">
+            Envoyer le message
+          </button>
+        </form>
+
+        <p style="text-align: center; margin-top: 1.5rem; color: #666; font-size: 0.9rem;">
+          <a href="mailto:contact@foodercato.com" style="color: #123BDA;">contact@foodercato.com</a> |
+          <a href="https://twitter.com/foodercato" target="_blank" rel="noopener" style="color: #123BDA;">@foodercato</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/contact.js"></script>
+</body>
+</html>

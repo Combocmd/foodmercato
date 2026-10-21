@@ -1,0 +1,159 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== LAYOUT GLOBAL (sticky footer) ===== */
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #F5F7FF;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #123BDA;
+  padding: 0.75rem 0;
+}
+
+.header-container {
+  padding: 0 1.5rem 0 0;  /* ← logo au bord gauche de l'écran */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* ---- BRAND (gauche) ---- */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.brand .logo {
+  height: 110px;         /* ← plus grand */
+  width: auto;
+  display: block;
+}
+
+.brand-text {
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+/* ---- NAV / MENU (droite) ---- */
+.nav {
+  flex-shrink: 0;
+  margin-left: 200px;  /* ← 200px de marge à gauche du menu */
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+  margin-right: 20rem;  /* ← espace à droite du menu */
+}
+
+
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: opacity 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  opacity: 0.85;
+  border-color: #fff;
+  outline: none;
+}
+
+/* ===== MAIN (prend l'espace restant = footer en bas) ===== */
+main {
+  flex: 1;               /* ← pousse le footer en bas */
+  padding: 2rem 1.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---- BOUTON DÉCONNEXION (extrême droite) ---- */
+.btn-logout {
+  background-color: #e74c3c;
+  color: #fffafa;
+  text-decoration: none;
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  transition: background-color 0.2s, transform 0.1s;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-right: 2rem;  /* ← espace à droite du bouton */
+}
+
+.btn-logout:hover,
+.btn-logout:focus {
+  background-color: #c0392b;  /* rouge plus foncé au hover */
+  color: #000;
+  transform: scale(1.03);
+  outline: none;
+}
+
+/* ===== FOOTER (toujours en bas) ===== */
+.footer {
+  background-color: #123BDA;
+  color: #fff;
+  padding: 1.5rem 0;
+  flex-shrink: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .header-container {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .nav-list {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .brand-text {
+    font-size: 1.5rem;
+  }
+
+  .brand .logo {
+    height: 65px;
+  } 
+}

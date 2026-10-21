@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Foodercato - Tous les articles">
+  <title><%= title || 'Articles - Foodercato' %></title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/images/favicon.ico">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main id="main-content" role="main">
+    <div class="container">
+      <header class="page-header" style="padding: 2rem 0;">
+        <h1 style="color: #123BDA; margin-bottom: 0.5rem;">Tous les articles</h1>
+        <p style="color: #666;">Retrouvez toute l'actualité du Barça version Foodercato</p>
+      </header>
+
+      <section id="articles-list" class="articles-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+        <!-- Articles injectés par JS via API -->
+        <div class="loading" style="grid-column: 1/-1; text-align: center; padding: 3rem;">
+          <div class="spinner-border text-warning" role="status"><span class="visually-hidden">Chargement...</span></div>
+          <p class="mt-2">Chargement des articles...</p>
+        </div>
+      </section>
+
+      <nav class="pagination" style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 2rem;">
+        <!-- Pagination injectée par JS -->
+      </nav>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/articles.js"></script>
+</body>
+</html>

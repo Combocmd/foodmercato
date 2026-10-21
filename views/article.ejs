@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="<%= title %> - Foodercato">
+  <title><%= title %> - Foodercato</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/images/favicon.ico">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main id="main-content" role="main">
+    <div class="container">
+      <article class="article-detail" style="max-width: 800px; margin: 0 auto; padding: 2rem 0;">
+        <header class="article-header" style="margin-bottom: 2rem;">
+          <span class="article-category" style="background: #123BDA; color: #fff; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; text-transform: uppercase;"><%= article?.categorie || 'Non classé' %></span>
+          <h1 class="article-title" style="margin: 1rem 0; color: #123BDA; font-size: 2.5rem;"><%= article?.titre || 'Titre de l\'article' %></h1>
+          <div class="article-meta" style="color: #666; font-size: 0.9rem;">
+            <span>Par <%= article?.auteur?.nomComplet || 'Foodercato' %></span>
+            <span style="margin: 0 1rem;">•</span>
+            <time><%= article?.datePublication ? new Date(article.datePublication).toLocaleDateString('fr-FR') : 'Date' %></time>
+            <span style="margin: 0 1rem;">•</span>
+            <span><%= article?.vues || 0 %> vues</span>
+          </div>
+        </header>
+
+        <% if (article?.imageUne?.url) { %>
+          <figure class="article-image" style="margin-bottom: 2rem;">
+            <img src="<%= article.imageUne.url %>" alt="<%= article.imageUne.alt || article.titre %>" style="width: 100%; border-radius: 8px;">
+          </figure>
+        <% } %>
+
+        <div class="article-content" style="line-height: 1.8; font-size: 1.1rem; color: #333;">
+          <%- article?.contenu || '<p>Contenu de l\'article à venir...</p>' %>
+        </div>
+
+        <footer class="article-footer" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee;">
+          <div class="article-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <% if (article?.tags?.length) { %>
+              <% article.tags.forEach(tag => { %>
+                <a href="/recherche?q=<%= tag %>" class="tag" style="background: #f0f0f0; color: #123BDA; padding: 0.25rem 0.75rem; border-radius: 20px; text-decoration: none; font-size: 0.85rem;"><%= tag %></a>
+              <% }) %>
+            <% } %>
+          </div>
+        </footer>
+      </article>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/article.js"></script>
+</body>
+</html>

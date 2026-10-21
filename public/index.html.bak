@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Foodercato - Le média FC Barcelone avec une touche culinaire">
+  <title>Foodmercato - L'actualité du Barça version cuisine</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/images/favicon.ico">
+</head>
+<body>
+
+  <!-- HEADER PUR CSS -->
+  <header class="header">
+    <div class="header-container">
+      <!-- Logo + titre à gauche -->
+      <a href="/index.html" class="brand" aria-label="Foodercato - Accueil">
+        <img src="images/logo.png" alt="" class="logo">
+        <span class="brand-text">Foodmercato</span>
+      </a>
+
+      <!-- Menu à droite -->
+      <nav class="nav" role="navigation" aria-label="Navigation principale">
+        <ul class="nav-list">
+          <li><a href="/about.html" class="nav-link">About</a></li>
+          <li><a href="/articles.html" class="nav-link">Articles</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Bouton déconnexion -->
+      <a href="/connexion.html" class="btn-logout" role="button">Déconnexion</a>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main id="main-content" role="main">
+    <div class="container">
+      <p style="text-align:center; padding:3rem; color:#666;">Header OK — prêt pour la suite 🚀</p>
+    </div>
+  </main>
+
+  <!-- FOOTER MINIMAL -->
+  <footer class="footer">
+    <div class="container" style="text-align:center; padding:1rem; color:#999; font-size:0.85rem;">
+      &copy; 2025 Foodercato — Fait avec ❤️ pour le Barça
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="/js/app.js"></script>
+  <script src="/js/index.js"></script>
+</body>
+</html>
